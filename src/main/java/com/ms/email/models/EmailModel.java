@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Table(name =  "TB_EMAIL")
+@Table(name =  "tb_email")
 public class EmailModel implements Serializable {
     private static final long serialVersionUID = 1l;
 
@@ -16,7 +16,10 @@ public class EmailModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID emailId;
     private UUID userId;
+
+    @Column(name = "email_from")
     private String emailFrom;
+
     private String emailTo;
     private String subject;
     @Column(columnDefinition = "TEXT")
